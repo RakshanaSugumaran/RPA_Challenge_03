@@ -1,0 +1,21 @@
+﻿Read inputs from the excel -- generate sales report files in word format using the master template -- convert the word files into the pdf format using windows app -- move the files to specific folder
+
+1. Read the input data from the Input_Data csv file 
+2. As the file type is .csv use read csv activitiy
+3. Extract the data to data table dtEmpDetails
+4. Using for each row in data table activity loop through each row
+5. We have to Open Master template and provide the employee details there for each row
+6. Use the Copy file activitiy to make the copy of Master template for each employee
+7. Use the word apllication scope activity to use replace text in document activity
+8. For each employee name document the Name, Division, Sales information will get replaced
+9. Initiate the windows application for converting the word file into pdf using start process activity
+10. Using click activity update the steps to update the application required fields
+11. Start Process activity to open the windows application
+12. Using assign activity get the name of the each word in an array
+13. To convert each file we need to loop through every file available in the word folder
+14. Click activity- The first step in conversion is to select the word file from the Word_File folder
+15. Type into activity- to give the file name of each word file
+16. We have to provide the destination path as well(empty field before each iteration)
+ 17. After clicking on the convert button the conversion status will be changed as 'completed'
+ 18. Using Element Exists actiivity get the 'completed' status
+ 19. Using if statement show the success message
